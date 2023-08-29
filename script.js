@@ -142,3 +142,15 @@ async function getWeather(arr){
     const objs = data.filter(({status}) => status === "fulfilled").map(({value}) => value.current);
     return objs
 }
+
+function createMarkup(arr){
+    return arr.map(({temp_c, condition:{icon, text}}) =>`<li>
+    <div>
+    <h2></h2>
+    <h3></h3>
+    </div>
+    <img src="" alt="${text}">
+    <p>${text}</p>
+    <p>${temp_c}</p>
+</li>`).join('')
+}
